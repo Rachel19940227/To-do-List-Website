@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta tags for character set, index information, and page title -->
+        <meta charset="utf-8">
+        <meta name="main" content="main">
+        <title>index</title>
+        <link href="/stylesheets/main.css" rel="stylesheet">
+        <!-- add meta and title to this page -->
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <!-- Navigation menu -->
+                <nav>
+                    <ul>
+                        <!-- Navigation items with links to different pages -->
+                        <li id="allTasks"><a href="/pages/allTasks.html">All Tasks</a></li>
+                        <li id="Contact"><a href="/pages/contact.html">Contact</a></li>
+                        <li id="main"><a href="/pages/main.html">My Tasks</a></li>
+                    </ul>
+                </nav>
+                <!-- Main content section -->
+                <div class="container">
+                    <h1>User's Todo List</h1>
+                    <!-- add an add-task button and a select button here -->
+                    <div class="right-align-container">
+                        <div class="button-container">
+                            <button class="button" id="addTaskBtn" name="add">Add Task</button>
+                        </div>
+                        <div class="select-container">
+                            <select name="todos" class="filter-todo">
+                                <option value="all">All</option>
+                                <option value="completed">Completed</option>
+                                <option value="uncompleted">Uncompleted</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- add task info table -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task Title</th>
+                                <th>Task Info</th>
+                                <th>Priority Level</th>
+                                <th>Create Time</th>
+                                <th>Created By</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Task 1</td>
+                                <td>Lorem ipsum dolor sit amet</td>
+                                <td>High</td>
+                                <td>2024-03-28 10:00 AM</td>
+                                <td>User A</td>
+                                <td>
+                                    <button class="modifyTaskBtn" id="modifyTaskBtn">Modify</button>
+                                    <button class="btn delete-btn">Delete</button>
+                                    <button class="btn complete">Complete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Task 2</td>
+                                <td>Consectetur adipiscing elit</td>
+                                <td>Medium</td>
+                                <td>2024-03-28 11:30 AM</td>
+                                <td>User B</td>
+                                <td>
+                                    <button class="modifyTaskBtn" id="modifyTaskBtn">Modify</button>
+                                    <button class="btn delete-btn">Delete</button>
+                                    <button class="btn complete">Complete</button>
+                                </td>
+                            </tr>
+                            <!-- Add more tasks as needed -->
+                        </tbody>
+                    </table>
+                    <!--add new task form-->
+                    <div class="modal-overlay" id="modalOverlay">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close-btn" id="closeBtn">&times;</span>
+                            <h2 class="modal-title">Add a Task</h2>
+                            <div class="modal-input">
+                                <label for="taskTitle">Task Title:</label>
+                                <input type="text" id="taskTitle" placeholder="Please input task title" />
+                            </div>
+                            <div class="modal-input">
+                                <label for="taskInfo">Task Info:</label>
+                                <input type="text" id="taskInfo" placeholder="Please input task info" />
+                            </div>
+                            <div class="modal-input">
+                                <label for="prioritySelect">Priority Level:</label>
+                                <select id="prioritySelect">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                            <div class="modal-buttons">
+                                <button id="cancelBtn">Cancel</button>
+                                <button id="saveBtn">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--modify the task form-->
+                    <div class="modal-overlay" id="modifyModalOverlay">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close-btn" id="closeModifyBtn">&times;</span>
+                            <h2 class="modal-title" id="modifyModalTitle">Modify Task</h2>
+                            <div class="modal-input">
+                                <label for="modifyTaskTitle">Task Title:</label>
+                                <input type="text" id="modifyTaskTitle" placeholder="Please input task title" />
+                            </div>
+                            <div class="modal-input">
+                                <label for="modifyTaskInfo">Task Info:</label>
+                                <input type="text" id="modifyTaskInfo" placeholder="Please input task info" />
+                            </div>
+                            <div class="modal-input">
+                                <label for="modifyPrioritySelect">Priority Level:</label>
+                                <select id="modifyPrioritySelect">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                            <div class="modal-buttons">
+                                <button id="cancelModifyBtn">Cancel</button>
+                                <button id="saveModifyBtn">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--delete the task form-->
+                    <div class="modal-overlay delete-modal" id="deleteModal">
+                        <div class="modal-content">
+                            <h2 class="modal-title">Delete Task</h2>
+                            <p class="modal-message">Are you sure you want to delete this task?</p>
+                            <div class="modal-buttons">
+                                <button class="btn confirm-btn">Yes</button>
+                                <button class="btn cancel-btn">No</button>
+                            </div>
+                        </div>
+                    </div>
+        
+
+                </div>
+            </div>
+            <!-- Footer section -->
+            <footer class="footer">
+                <!-- Footer divisions with contact information -->
+                <p>Copyright @ 2024 Z&Z Tech.Ltc</p>
+            </footer>
+        </div>
+        <script src="../script/app1.js"></script>
+    </body>
+</html>

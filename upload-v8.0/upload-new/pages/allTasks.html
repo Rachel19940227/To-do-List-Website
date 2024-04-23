@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta tags for character set, index information, and page title -->
+        <meta charset="utf-8">
+        <meta name="main" content="main">
+        <title>index</title>
+        <link href="/stylesheets/allTask.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- add meta and title to this page -->
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <!-- Navigation menu -->
+                <nav>
+                    <ul>
+                        <!-- Navigation items with links to different pages -->
+                        <li id="allTasks"><a href="/pages/allTasks.html">All Tasks</a></li>
+                        <li id="Contact"><a href="/pages/contact.html">Contact</a></li>
+                        <li id="main"><a href="/pages/main.html">My Tasks</a></li>
+                    </ul>
+                </nav>
+                <!-- Main content section -->
+                <div class="container">
+                    <h1>Task Management</h1>
+                    <div id="allTask_info">
+                        <p>this is all tasks page, you can see tasks calculation here.</p>
+                        <p>if you want to create new task, please go to <a href="main.css">user page</a>.</p>
+                    </div>
+
+                    <div class="task-summary">
+                        <div class="task-item total-tasks">
+                            <i class="fas fa-tasks"></i>
+                            <p>Total Tasks: <span id="totalTasks"></span></p>
+                        </div>
+                        <div class="task-item low-priority">
+                            <i class="fa fa-minus-circle"></i>
+                            <p>Low Priority: <span id="lowPriorityTasks"></span></p>
+                        </div>
+                        <div class="task-item medium-priority">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Medium Priority: <span id="mediumPriorityTasks"></span></p>
+                        </div>
+                        <div class="task-item high-priority">
+                            <i class="fa fa-exclamation-circle"></i>
+                            <p>High Priority: <span id="highPriorityTasks"></span></p>
+                        </div>
+                    </div>
+                    <!-- Search input and button -->
+                    <div id="search">
+                        <input type="text" id="searchInput" placeholder="Search Task Name">
+                        <button id="searchBtn">Search</button>
+                    </div>
+                    <table id="taskTable">
+                        <thead>
+                            <tr>
+                                <th>Task Name</th>
+                                <th>Task Info</th>
+                                <th>Priority Level</th>
+                                <th>Create Time</th>
+                                <th>Created By</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Task rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Footer section -->
+            <footer class="footer">
+                <!-- Footer divisions with contact information -->
+                <p>Copyright @ 2024 Z&Z Tech.Ltc</p>
+            </footer>
+        </div>
+        <script src="./app2.js"></script>
+    </body>
+</html>

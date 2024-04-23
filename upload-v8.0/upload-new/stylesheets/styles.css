@@ -1,0 +1,247 @@
+
+/* Set general styles for the entire page */
+html, body {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body{
+    background-image: url("../image/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Navigation styles */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none;
+}
+
+#ToDoList {
+    float: left;
+    font-weight: bold;
+    width: 10%;
+    font-size: 18px;
+}
+
+#Login,#Contact,#signUp {
+    float: right;
+    font-weight: bold;
+    width: 10%;
+    font-size: 18px;
+}
+nav a{
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgb(65, 132, 255);
+    color: #ffffff;
+}
+
+/* Page container styles */
+#page-container {
+    position: relative;
+    min-height: 80vh;
+}
+  
+#content-wrap {
+    padding-bottom: 5rem;
+}
+
+/* Footer styles */
+.footer {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;            /* Footer height */
+    text-align: center;
+}
+
+/* this is some normal css style */
+h1{
+    text-align: center;
+    font-size:40px;
+    padding: 5%;
+}
+
+hr{
+    background-color: rgb(202, 202, 202);
+    height: 1px;
+    border: none;
+}
+h2{
+    font-size: 24px;
+    margin: auto;
+}
+h3{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Index div styles */
+.index-main{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    margin-bottom: auto;
+    width: 700px;
+}
+.index-para{
+    font-size: 18px;
+    text-align: center;
+    padding: 5%;
+}
+.button{
+    min-height:40px; 
+    min-width: 150px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(65, 132, 255);
+    border-radius: 10px;
+    border:none;
+}
+#sign-up-button{
+    color: #fff;
+}
+.button:hover {
+    background-color:#002ead;
+}
+.center{
+    text-align: center;
+}
+/*login div styles*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; 
+}
+.login-wrapper {
+    background-color: #fff;
+    width: 25%;
+    max-width: 400px; 
+    height: 500px; 
+    border-radius: 15px;
+    padding: 20px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 150px;
+}
+.form-wrapper {
+    margin-bottom: 20px; /* Add margin for spacing */
+}
+.input-item {
+    display: block;
+    width: 90%;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    border: 0;
+    padding: 10px;
+    border-bottom: 1px solid rgb(128, 125, 125);
+    font-size: 18px;
+    outline: none;
+}
+.input-item:placeholder {
+    text-transform: uppercase;
+}
+
+.btn{
+    text-align: center;
+    padding: 10px;
+}
+.msg {
+    text-align: center;
+    font-size: 18px;
+}
+a {
+    text-decoration-line: none;
+    color: #abc1ee;
+}
+.red {
+    text-align: center;
+    color: red;
+    size: 14px;
+}
+/* style of contact info */
+/* Form styles */
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contact-container {
+    background-color: #fff;
+    width: 30%;
+    padding: 40px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    margin-top: 5%; /* Adjust margin-top to move the container up */
+    
+}
+
+
+#contact h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+#contact fieldset {
+    margin-bottom: 20px;
+    border: none; /* Remove border */
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact textarea {
+    display: block;
+    width: 100%; /* Make inputs full width */
+    margin-bottom: 20px;
+    border: 1px solid rgb(128, 125, 125); /* Add border */
+    padding: 10px;
+    border-radius: 5px; /* Add border radius */
+    font-size: 18px;
+    outline: none;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+/* Set the font for placeholder text */
+::placeholder {
+    font-family: Arial, Helvetica, sans-serif; /* Set the desired font family */
+}
+#contact textarea {
+    height: 100px;
+}
+
+#contact button {
+    min-height: 40px;
+    min-width: 150px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(65, 132, 255);
+    border-radius: 10px;
+    border: none;
+    display: block;
+    margin: auto; /* Center button */
+}
+
+#contact button:hover {
+    background-color: #002ead;
+}

@@ -1,0 +1,251 @@
+/* Set general styles for the entire page */
+body {
+    padding:0; 
+    border:0; 
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+/* Navigation styles */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(37, 100, 207);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#allTasks {
+    float: left;
+    font-weight: bold;
+    width: 10%;
+    font-size: 18px;
+}
+
+#main,#Contact {
+    float: right;
+    font-weight: bold;
+    width: 10%;
+    font-size: 18px;
+}
+nav a{
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgb(0, 90, 158);
+    color: #ffffff;
+}
+
+/* Page container styles */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+  
+#content-wrap {
+    padding-bottom: 5rem;
+}
+
+/* Footer styles */
+.footer {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;            /* Footer height */
+    text-align: center;
+}
+/* this is some normal css style */
+h1{
+    text-align: center;
+    font-size:40px;
+    padding: 2%;
+}
+
+
+/* style of main page */
+.right-align-container {
+    display: flex;
+    justify-content: flex-end; /* Align children to the right */
+}
+
+.button-container,
+.select-container {
+    margin-left: 10px; /* Optional: Adjust spacing between elements */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color for the button */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+.select-container select {
+    padding: 8px;
+    border: 1px solid #007bff; /* Blue border color */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    appearance: none; /* Remove default arrow icon */
+    background-color: #fff; /* White background color */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the arrow icon */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.select-container select:hover {
+    border-color: #0056b3; /* Darker blue border color on hover */
+}
+
+.select-container select:focus {
+    outline: none; /* Remove focus outline */
+    border-color: #007bff; /* Blue border color on focus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Add focus shadow */
+}
+
+
+/* Style for the modal overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background with some opacity */
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* Style for the modal content */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    width: 20%;
+}
+
+/* Style for the close button in the modal */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #f00; /* Change color on hover */
+}
+
+/* Style for the modal title */
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style for the input fields and select in the modal */
+.modal-input {
+    margin-bottom: 15px;
+}
+
+.modal-input label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.modal-input input[type="text"],
+.modal-input select {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style for the buttons in the modal */
+.modal-buttons {
+    text-align: right;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+/* Style for task info table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #cccccc; /* Light gray border */
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #007bff; /* Blue header background */
+    color: #ffffff; /* White text color */
+}
+td {
+    background-color: #f0f0f0; /* Light gray background for data cells */
+}
+.btn,.modifyTaskBtn,.deleteBtn{
+    padding: 8px 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff; /* Blue button background */
+    color: #ffffff; /* White text color */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

@@ -1,0 +1,206 @@
+/* Set general styles for the entire page */
+body {
+    padding:0; 
+    border:0; 
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+/* Navigation styles */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(37, 100, 207);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#allTasks {
+    float: left;
+    font-weight: bold;
+    width: 10%;
+    font-size: 18px;
+}
+
+#main,#Contact {
+    float: right;
+    font-weight: bold;
+    width: 10%;
+    font-size: 18px;
+}
+nav a{
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgb(0, 90, 158);
+    color: #ffffff;
+}
+
+/* Page container styles */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+  
+#content-wrap {
+    padding-bottom: 5rem;
+}
+
+/* Footer styles */
+.footer {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;            /* Footer height */
+    text-align: center;
+}
+/* this is some normal css style */
+h1{
+    text-align: center;
+    font-size:40px;
+    padding: 2%;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+}
+
+#allTask_info{
+    margin-bottom: 20px;
+}
+/* style of search button */
+#search {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; /* Rounded corners on the left side */
+    font-size: 16px;
+}
+
+#searchBtn {
+    padding: 10px 15px;
+    background-color: #007bff; /* Blue color for the button */
+    color: #fff; /* White text color */
+    border: 1px solid #007bff;
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#searchBtn:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+    border-color: #0056b3;
+}
+
+
+/* style of task summary */
+.task-summary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-item {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 10px; /* Optional: Adjust margin between items */
+    position: relative;
+}
+
+.task-item i {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.total-tasks {
+    background-color: #f8d7da; /* Red color for total tasks */
+}
+
+.low-priority {
+    background-color: #d1ecf1; /* Blue color for low priority */
+}
+
+.medium-priority {
+    background-color: #fff3cd; /* Yellow color for medium priority */
+}
+
+.high-priority {
+    background-color: #d4edda; /* Green color for high priority */
+}
+
+.total-tasks i {
+    color: #dc3545; /* Red color for total tasks icon */
+}
+
+.low-priority i {
+    color: #0d6efd; /* Blue color for low priority icon */
+}
+
+.medium-priority i {
+    color: #ffc107; /* Yellow color for medium priority icon */
+}
+
+.high-priority i {
+    color: #28a745; /* Green color for high priority icon */
+}
+/* style of task page */
+.task-page {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.task-summary {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #cccccc; /* Light gray border */
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #007bff; /* Blue header background */
+    color: #ffffff; /* White text color */
+}
+td {
+    background-color: #f0f0f0; /* Light gray background for data cells */
+}
+
