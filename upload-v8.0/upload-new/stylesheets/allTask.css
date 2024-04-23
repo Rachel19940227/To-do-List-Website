@@ -15,7 +15,7 @@ body {
 
 
 /* Navigation styles */
-ul {
+#ul-nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -204,3 +204,8 @@ td {
     background-color: #f0f0f0; /* Light gray background for data cells */
 }
 
+/* pagination */
+#pagination {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

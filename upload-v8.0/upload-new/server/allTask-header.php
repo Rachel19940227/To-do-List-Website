@@ -15,7 +15,7 @@
             <div id="content-wrap">
                 <!-- Navigation menu -->
                 <nav>
-                    <ul>
+                    <ul id="ul-nav">
                         <!-- Navigation items with links to different pages -->
                         <li id="allTasks"><a href="../server/allTask.php">All Tasks</a></li>
                         <li id="Contact"><a href="../server/index.php">Logout</a></li>

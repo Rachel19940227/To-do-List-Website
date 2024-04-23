@@ -99,7 +99,7 @@ if ($resultUserId->num_rows > 0) {
                     <td><?php echo $task['create_time']; ?></td> 
                     <td><?php echo ($task['complete'] == 1) ? 'Completed' : 'Uncompleted'; ?></td> 
                     <td>
-                        <button class="modifyTaskBtn" onclick="modifyTask(this);">Modify</button> 
+                        <button class="btn modifyTaskBtn" onclick="modifyTask(this);">Modify</button> 
                         <button class="btn delete-btn" onclick="deleteTask(<?php echo $task['task_id']; ?>)">Delete</button></a> 
                     </td>
                 </tr>
@@ -184,6 +184,21 @@ if ($resultUserId->num_rows > 0) {
 </div>
 <script src="../script/modify.js"></script> 
 <script src="../script/app1.js"></script> 
+<div class="container" id="pagination">
+    <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+        <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+    </nav>
+</div>
 <?php include("footer.php"); ?> <!-- 包含 footer.php 文件的内容 -->
 </body>
 </html>

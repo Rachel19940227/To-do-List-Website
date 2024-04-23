@@ -5,6 +5,8 @@
     <meta charset="utf-8"> <!-- 字符集、索引信息和页面标题的元标签 -->
     <meta name="main" content="main"> <!-- 主要内容的元标签 -->
     <title>allTask</title> <!-- 页面标题 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="../script/allTask.js"></script> <!-- 引入外部 JavaScript 文件 -->
     <!-- add meta and title to this page -->
 </head>
@@ -141,7 +143,21 @@ if ($result->num_rows > 0) { // 如果查询结果不为空
         </tbody>
     </table>
 </div>
-
+<div class="container" id="pagination">
+    <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+        <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+    </nav>
+</div>
 <?php include("footer.php"); ?> <!-- 包含 footer.php 文件的内容 -->
 
 </body>
