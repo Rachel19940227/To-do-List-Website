@@ -29,13 +29,29 @@ if ($resultUserId->num_rows > 0) {
     $rowUserId = $resultUserId->fetch_assoc(); // 获取查询结果的关联数组形式
     $userId = $rowUserId['userID']; // 获取用户ID（user_id）
 
+    $page=$_GET["page"]??1;
+
+
+    $sqlTasksNumber="SELECT count(*) FROM tasks WHERE user_id='$userId'";
+    $totalresult = mysqli_query($conn,$sqlTasksNumber);
+    $total= mysqli_fetch_row($totalresult)[0];
+    $PageSize = 5;
+    $totalPage = ceil($total/$PageSize);
+    if($page > $totalPage){
+        $page = $totalPage;
+    }
+    if($page<1){
+        $page=1;
+    }
+    $start=($page-1)*$PageSize;
     // 使用用户ID（user_id）从数据库中获取该用户创建的任务列表
-    $sqlTasks = "SELECT * FROM tasks WHERE user_id='$userId'"; // SQL查询语句，根据用户ID查询任务列表
+    $sqlTasks = "SELECT * FROM tasks WHERE user_id='$userId' limit $start,$PageSize"; // SQL查询语句，根据用户ID查询任务列表
     $resultTasks = $conn->query($sqlTasks); // 执行SQL查询
+    $result = $conn->query($sqlTasks); // 执行SQL查询
 
     $tasks = []; // 初始化任务数组
-    if ($resultTasks->num_rows > 0) {
-        while ($rowTask = $resultTasks->fetch_assoc()) {
+    if ($result->num_rows > 0) {
+        while ($rowTask = $result->fetch_assoc()) {
             $tasks[] = $rowTask; // 将每个任务添加到任务数组中
         }
     }
@@ -187,14 +203,14 @@ if ($resultUserId->num_rows > 0) {
 <div class="container" id="pagination">
     <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-        <a class="page-link">Previous</a>
+        <li class="page-item <?php echo ($page <= 1) ? 'disabled' : '' ?>">
+            <a class="page-link" href="?page=<?php echo max(1, $page - 1) ?>">Previous</a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-        <a class="page-link" href="#">Next</a>
+        <?php for ($i = 1; $i <= $totalPage; $i++) : ?>
+            <li class="page-item"><a class="page-link" href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+        <?php endfor; ?>
+        <li class="page-item <?php echo ($page >= $totalPage) ? 'disabled' : '' ?>">
+            <a class="page-link" href="?page=<?php echo min($totalPage, $page + 1) ?>">Next</a>
         </li>
     </ul>
     </nav>

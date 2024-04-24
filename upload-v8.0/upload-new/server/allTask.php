@@ -27,8 +27,22 @@ $conn = new mysqli($host, $user, $password, $dbname); // 创建一个新的数�
 ?>
 
 <?php 
+    $page=$_GET["page"]??1;
 
-$sql = "SELECT * FROM tasks"; // SQL 查询语句：选择所有任务
+
+    $sqlTasksNumber="SELECT count(*) FROM tasks ";
+    $totalresult = mysqli_query($conn,$sqlTasksNumber);
+    $total= mysqli_fetch_row($totalresult)[0];
+    $PageSize = 5;
+    $totalPage = ceil($total/$PageSize);
+    if($page > $totalPage){
+        $page = $totalPage;
+    }
+    if($page<1){
+        $page=1;
+    }
+    $start=($page-1)*$PageSize;
+$sql = "SELECT * FROM tasks limit $start,$PageSize"; // SQL 查询语句：选择分页任务
 $result = mysqli_query($conn, $sql); // 执行 SQL 查询
 
 if ($result->num_rows > 0) { // 如果查询结果不为空
@@ -37,6 +51,17 @@ if ($result->num_rows > 0) { // 如果查询结果不为空
         $tasks[] = $row; // 将每一行添加到任务数组中
     }
     // echo json_encode($tasks); // 输出任务数据为 JSON 格式
+} else {
+    echo "No tasks found."; // 如果没有找到任务，则输出提示信息
+}
+
+$sqlTotal = "SELECT * FROM tasks "; // SQL 查询语句：选择所有任务
+$resultTotal = mysqli_query($conn, $sqlTotal); // 执行 SQL 查询
+if ($resultTotal->num_rows > 0) { // 如果查询结果不为空
+    $tasksTotal = array(); // 初始化任务数组
+    while ($row = $resultTotal->fetch_assoc()) { // 遍历查询结果的每一行
+        $tasks_All[] = $row; // 将每一行添加到任务数组中
+    }
 } else {
     echo "No tasks found."; // 如果没有找到任务，则输出提示信息
 }
@@ -53,13 +78,13 @@ if ($result->num_rows > 0) { // 如果查询结果不为空
     <div class="task-summary">
         <?php
         // Initialize counters for each priority level 初始化每个优先级的计数器
-        $totalTasks = count($tasks); // 总任务数
+        $totalTasks = count($tasks_All); // 总任务数
         $lowPriorityTasks = 0; // 低优先级任务数
         $mediumPriorityTasks = 0; // 中等优先级任务数
         $highPriorityTasks = 0; // 高优先级任务数
 
         // Loop through tasks to count priority levels 遍历任务以计算优先级水平
-        foreach ($tasks as $task) {
+        foreach ($tasks_All as $task) {
             switch ($task['priority_level']) {
                 case 'Low':
                     $lowPriorityTasks++; // 低优先级任务数加一
@@ -146,14 +171,14 @@ if ($result->num_rows > 0) { // 如果查询结果不为空
 <div class="container" id="pagination">
     <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-        <a class="page-link">Previous</a>
+        <li class="page-item <?php echo ($page <= 1) ? 'disabled' : '' ?>">
+            <a class="page-link" href="?page=<?php echo max(1, $page - 1) ?>">Previous</a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-        <a class="page-link" href="#">Next</a>
+        <?php for ($i = 1; $i <= $totalPage; $i++) : ?>
+            <li class="page-item"><a class="page-link" href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+        <?php endfor; ?>
+        <li class="page-item <?php echo ($page >= $totalPage) ? 'disabled' : '' ?>">
+            <a class="page-link" href="?page=<?php echo min($totalPage, $page + 1) ?>">Next</a>
         </li>
     </ul>
     </nav>
