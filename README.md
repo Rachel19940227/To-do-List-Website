@@ -24,11 +24,11 @@ ToDoList offers a user-friendly platform for efficient task management. For any 
 TODO List function fix
 1. Change the search function.
 TODO List function expansion
-1. Use bootstrap
+2. Use bootstrap
 Implement paging function: Next page Total number of pages Number of jump pages.
 - filter each column.
 - search each column.
 
 ## what I will do for next version
-2. Login verification, role permission management.
-3. Can integrate other SSO login functions, such as Google login.
+1. Login verification, role permission management.
+2. Can integrate other SSO login functions, such as Google login.
